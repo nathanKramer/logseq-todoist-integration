@@ -7,7 +7,9 @@ import { Todo, serialize } from "./logseq/todo";
 // 3. get journals for corresponding days
 // 4. replace todoist block with the new todoist block according to current todos
 export async function main() {
-  const todos = await fetchTodos(`${daysAgo(1)}T00:00:00.000000Z`);
+  const syncDays = 10;
+  const query = `${daysAgo(syncDays)}T00:00:00.000000Z`;
+  const todos = await fetchTodos(query);
   const grouped = groupByDay(todos);
 
   for (const [key, todos] of Object.entries(grouped)) {

@@ -44,13 +44,15 @@ export function groupByDay(todos: Item[]) {
 }
 
 export function replaceTodoistBlock(journal: string, newTodos: string) {
-  const blockMatcher = /- \[\[todoist\]\]$\n((?:\t-.*$\n*)*)/gm;
+  const blockMatcher =
+    /(- \[\[todoist\]\]$\n((?:\t\w+::\s+(?:true|false)\n)*))((?:\t-.*$\n*)*)/gm;
+  // .  block heading   (  metadata, e.g is it collapsed?  )(   each task  )
 
   if (journal.match(blockMatcher)) {
     return journal.replace(
       // matches the todoist block and its children
       blockMatcher,
-      `- [[todoist]]\n${newTodos}\n`
+      `$1${newTodos}\n`
     );
   }
 
