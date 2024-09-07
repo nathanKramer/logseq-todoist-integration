@@ -2,6 +2,8 @@
   "name": "@nathan.kramer/sync-lgsq-todoist",
   "version": "1.0.1",
   "description": "Sync Logseq with Todoist",
+  "repository": "https://github.com/nathanKramer/logseq-todoist-integration",
+  "homepage": "https://github.com/nathanKramer/logseq-todoist-integration",
   "main": "bin/index.js",
   "scripts": {
     "start": "ts-node ./index.ts",
