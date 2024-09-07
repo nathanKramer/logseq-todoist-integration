@@ -16,3 +16,7 @@ LOGSEQ_DIR=XXX
 ```sh
 npm run start
 ```
+
+## Warning
+
+This script updates journal files in your logseq directory. Use it at your own risk.
